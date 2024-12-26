@@ -3,6 +3,7 @@ package com.example.tt_exchangerate
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
@@ -36,6 +37,10 @@ class Adapter (
         holder.itemView.setOnClickListener {
             onClickListener.onClick(position)
         }
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Adapter.ViewHolder {
+        return ViewHolder(inflater.inflate(R.layout.item_for_exchange,parent,false))
     }
 
 }
