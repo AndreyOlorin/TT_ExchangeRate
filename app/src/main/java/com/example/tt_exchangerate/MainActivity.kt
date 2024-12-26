@@ -15,7 +15,6 @@ import java.net.URL
 
 class MainActivity : AppCompatActivity() {
 
-
     lateinit var pDialog: ProgressDialog
     val list = ArrayList<DataCourse>()
 
@@ -93,9 +92,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    override fun onClick(position: Int) {
-        val intent = Intent(this,Conversion::class.java)
-        intent.putExtra("abbreviation", list[position].toString())
-        startActivity(intent)
-    }
+
+
 }

@@ -8,7 +8,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 class Adapter (
-
     Context: Context, private val course : List<DataCourse>,
     private val onClickListener: CourseOnClickListener  ):
     RecyclerView.Adapter<Adapter.ViewHolder>() {
@@ -31,7 +30,6 @@ class Adapter (
         }
     }
 
-
     override fun onBindViewHolder(holder: Adapter.ViewHolder, position: Int) {
         holder.bind(getItem(position))
         holder.itemView.setOnClickListener {
@@ -42,5 +40,4 @@ class Adapter (
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Adapter.ViewHolder {
         return ViewHolder(inflater.inflate(R.layout.item_for_exchange,parent,false))
     }
-
 }
