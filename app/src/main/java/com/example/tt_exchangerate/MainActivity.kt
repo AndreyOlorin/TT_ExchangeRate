@@ -40,6 +40,13 @@ class MainActivity : AppCompatActivity() {
 
     inner class AsyncTaskHandler : AsyncTask<String,String,String>(){
 
+        override fun onPreExecute() {
+            super.onPreExecute()
+            pDialog = ProgressDialog(this@MainActivity)
+            pDialog.setMessage("Please Wait")
+            pDialog.setCancelable(false)
+            pDialog.show()
+        }
 
 
 
