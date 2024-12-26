@@ -90,6 +90,10 @@ class MainActivity : AppCompatActivity() {
                 i++
             }
 
+            val adapter = Adapter(this@MainActivity,list,this@MainActivity)
+            val recycler = findViewById<RecyclerView>(R.id.recycle_exchange)
+            recycler.adapter = adapter
+
 
 
 
