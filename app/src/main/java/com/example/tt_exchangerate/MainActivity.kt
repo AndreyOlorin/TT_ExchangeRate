@@ -20,6 +20,11 @@ class MainActivity : AppCompatActivity() {
         button_To_Home.setBackgroundResource(R.drawable.home_in)
         button_To_Conversion.setBackgroundResource(R.drawable.conversion)
 
+        button_To_Conversion.setOnClickListener{
+            val Intent = Intent(this, Conversion::class.java)
+            startActivity(Intent)
+        }
+
 
 
     }
