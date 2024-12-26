@@ -13,8 +13,6 @@ class Conversion : AppCompatActivity() {
         button_Conversion.setBackgroundResource(R.drawable.conversion_in)
         button_Home.setBackgroundResource(R.drawable.home)
 
-
-
         val info = intent.extras
         val abbreviation :String = info!!.get("abbreviation") as String
 
