@@ -48,6 +48,19 @@ class MainActivity : AppCompatActivity() {
             pDialog.show()
         }
 
+        override fun doInBackground(vararg url: String?): String {
+            val response : String
+            val connection = URL(url[0]).openConnection() as HttpURLConnection
+            try {
+                connection.connect()
+                response = connection.inputStream.use { it.reader().use { reader -> reader.readText()}}
+            }
+            finally {
+                connection.disconnect()
+            }
+            return response
+        }
+
 
 
     }
