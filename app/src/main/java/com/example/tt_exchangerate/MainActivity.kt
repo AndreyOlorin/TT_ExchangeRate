@@ -33,9 +33,6 @@ class MainActivity : AppCompatActivity() {
             val Intent = Intent(this, Conversion::class.java)
             startActivity(Intent)
         }
-
-
-
     }
 
     inner class AsyncTaskHandler : AsyncTask<String,String,String>(){
@@ -93,14 +90,12 @@ class MainActivity : AppCompatActivity() {
             val adapter = Adapter(this@MainActivity,list,this@MainActivity)
             val recycler = findViewById<RecyclerView>(R.id.recycle_exchange)
             recycler.adapter = adapter
-
-
-
-
         }
-
-
-
     }
 
+    override fun onClick(position: Int) {
+        val intent = Intent(this,Conversion::class.java)
+        intent.putExtra("abbreviation", list[position].toString())
+        startActivity(intent)
+    }
 }
