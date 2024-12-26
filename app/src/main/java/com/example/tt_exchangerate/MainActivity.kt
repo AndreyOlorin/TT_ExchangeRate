@@ -67,6 +67,34 @@ class MainActivity : AppCompatActivity() {
             jsonResult(result)
         }
 
+        private fun jsonResult (jsonStringer: String?){
+
+            val jsonResponse : JSONObject = JSONObject(jsonStringer)
+            val jsonValue : JSONObject = jsonResponse.getJSONObject("Valute")
+            val bufferArray : Array<String> = arrayOf("AUD","AZN","GBP","AMD","BYN","BGN","BRL","HUF","HKD",
+                "DKK","USD","EUR","INR","KZT","CAD","KGS","CNY","MDL",
+                "NOK","PLN","RON","XDR","SGD","TJS","TRY","TMT","UZS",
+                "UAH","CZK","SEK","CHF","ZAR","KRW","JPY")
+            val buffer = bufferArray.size
+            var i = 0
+            while (i <buffer){
+                val jsonObject = jsonValue.getJSONObject(bufferArray[i])
+                list.add (
+                    DataCourse(
+                        jsonObject.getString("CharCode"),
+                        jsonObject.getString("Name"),
+                        jsonObject.getDouble("Value"),
+                        jsonObject.getDouble("Previous")
+                    )
+                )
+                i++
+            }
+
+
+
+
+        }
+
 
 
     }
