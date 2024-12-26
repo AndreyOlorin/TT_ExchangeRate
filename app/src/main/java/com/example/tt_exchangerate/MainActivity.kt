@@ -97,7 +97,4 @@ class MainActivity : AppCompatActivity(), CourseOnClickListener {
         intent.putExtra("abbreviation", list[position].toString())
         startActivity(intent)
     }
-
-
-
 }
